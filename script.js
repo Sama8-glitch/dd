@@ -5,52 +5,34 @@
 }
 
 body{
+    background:#000;
+    overflow:hidden;
     display:flex;
     justify-content:center;
     align-items:center;
     height:100vh;
-    background:#000;
-    overflow:hidden;
+    font-family:Courier New, monospace;
 }
 
-.heart{
-    width:120px;
-    height:120px;
-    background:red;
-    transform:rotate(-45deg);
-    animation:beat 1s infinite;
-    position:relative;
-    box-shadow:0 0 50px red;
+#heart{
+    color:#ff4d6d;
+    font-size:12px;
+    line-height:12px;
+    white-space:pre;
+    text-shadow:0 0 8px #ff4d6d;
+    animation:pulse 2s infinite;
 }
 
-.heart::before,
-.heart::after{
-    content:"";
-    width:120px;
-    height:120px;
-    background:red;
-    border-radius:50%;
-    position:absolute;
-}
-
-.heart::before{
-    top:-60px;
-    left:0;
-}
-
-.heart::after{
-    left:60px;
-    top:0;
-}
-
-@keyframes beat{
+@keyframes pulse{
     0%{
-        transform:rotate(-45deg) scale(1);
+        transform:scale(1);
     }
+
     50%{
-        transform:rotate(-45deg) scale(1.2);
+        transform:scale(1.08);
     }
+
     100%{
-        transform:rotate(-45deg) scale(1);
+        transform:scale(1);
     }
 }
